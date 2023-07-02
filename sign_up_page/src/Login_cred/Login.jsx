@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from './axios'; 
 import './Login.css';
 
 const Login = () => {
+  // Component state
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -11,8 +12,8 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // Send the login credentials to the backend API
-      const response = await axios.post('http://localhost:3000/login', {
+      // Send the login credentials to the backend API 
+      const response = await axios.post('/login', {
         email: email,
         password: password
       });
